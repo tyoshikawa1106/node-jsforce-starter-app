@@ -1,0 +1,15 @@
+{
+  "name": "jsforce-local",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tyoshikawa1106",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-route": "1.4.x",
+    "angular-messages": "1.4.x",
+    "jsforce" : "1.6.x",
+    "salesforce-lightning-design-system": "1.0.x"
+  }
+}

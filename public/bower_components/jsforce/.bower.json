@@ -1,0 +1,39 @@
+{
+  "name": "jsforce",
+  "version": "1.6.0",
+  "homepage": "https://github.com/jsforce/jsforce",
+  "authors": [
+    "Shinichi Tomita <shinichi.tomita@gmail.com>"
+  ],
+  "description": "Salesforce API Library for JavaScript",
+  "main": "./build/jsforce.js",
+  "keywords": [
+    "salesforce",
+    "salesforce.com",
+    "sfdc",
+    "force.com",
+    "database.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "Gruntfile.*",
+    "testem.json",
+    "node_modules",
+    "bower_components",
+    "bin",
+    "examples",
+    "lib",
+    "test"
+  ],
+  "_release": "1.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.6.0",
+    "commit": "5f0dcce9da30d4cecebddc29ec2474330394f42a"
+  },
+  "_source": "git://github.com/jsforce/jsforce.git",
+  "_target": "1.6.x",
+  "_originalSource": "jsforce"
+}

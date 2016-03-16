@@ -1,0 +1,29 @@
+<div class="slds-m-around--small">
+  <input type="text" class="slds-input" ng-model="query.Name" placeholder="Please Search Key"></input>
+</div>
+<div>
+  <table class="slds-table slds-table--bordered transmissionTable" cellpadding="0" cellspacing="0" border="0">
+    <colgroup>
+      <col></col>
+      <col></col>
+    </colgroup>
+    <thead>
+      <tr class="slds-text-heading--label">
+        <th>Name</th>
+        <th>Account Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in accounts | filter:query">
+        <td>
+          <a href="#/view/{{item.Id}}">
+            <span ng-bind="item.Name" id="accName" />
+          </a>
+        </td>
+        <td>
+          <span ng-bind="item.AccountNumber" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
