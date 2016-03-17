@@ -7,10 +7,8 @@ function login() {
 }
 
 function logout() {
-  conn.logout();
-  jsforce.browser.on('disconnect', function(){
-      location.href = "/";
-  });
+  jsforce.browser.logout();
+  location.href = "/";
   return false;
 }
 
