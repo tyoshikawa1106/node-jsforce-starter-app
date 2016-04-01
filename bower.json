@@ -1,0 +1,25 @@
+{
+  "name": "jsforce_starter_app",
+  "description": "JSforce Sample Application",
+  "main": "server.js",
+  "authors": [
+    "Taiki Yoshikawa"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tyoshikawa1106/node-jsforce-starter-app",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-route": "1.4.x",
+    "angular-messages": "1.4.x",
+    "jsforce" : "1.6.x"
+  }
+}

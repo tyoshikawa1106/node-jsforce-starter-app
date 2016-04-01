@@ -12,5 +12,5 @@ gulp.task("sass", function() {
 
 gulp.task("slds-copy", function() {
     return gulp.src("./node_modules/@salesforce-ux/design-system/assets/**/*")
-        .pipe(gulp.dest( './public/lib/SLDS/assets/' ) );
+        .pipe(gulp.dest( './public/vendor/SLDS/assets/' ) );
 });

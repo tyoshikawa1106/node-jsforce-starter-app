@@ -1,7 +1,7 @@
 {
-  "name": "angular-route",
-  "version": "1.4.9",
-  "description": "AngularJS router module",
+  "name": "angular-messages",
+  "version": "1.4.10",
+  "description": "AngularJS module that provides enhanced support for displaying messages within templates",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,6 @@
     "angular",
     "framework",
     "browser",
-    "router",
     "client-side"
   ],
   "author": "Angular Core Team <angular-core+npm@google.com>",
