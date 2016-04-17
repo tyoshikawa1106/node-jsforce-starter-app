@@ -5,7 +5,7 @@
 ## Setup
 ```
 $ cd desktop
-$ git clone ...
+$ git clone git@github.com:tyoshikawa1106/node-jsforce-starter-app.git
 $ cd node-jsforce-starter-app
 $ npm install
 $ npm start
