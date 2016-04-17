@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@salesforce-ux/design-system": "^1.0.0",
+    "jsforce-ajax-proxy": "^1.0.0",
     "express": "^4.13.4"
   },
   "devDependencies": {
