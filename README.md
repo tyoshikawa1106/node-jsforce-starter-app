@@ -11,12 +11,7 @@ $ npm install
 $ npm start
 ```
 
-## gulp command
-```
-$ gulp
-```
-
-## jsforce-ajax-proxy
+## jsforce-ajax-proxy setup
 ```
 $ cd desktop
 $ git clone git@github.com:jsforce/jsforce-ajax-proxy.git
