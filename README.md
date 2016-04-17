@@ -16,7 +16,7 @@ $ npm start
 $ gulp
 ```
 
-## jsforce-ajax-proxy setup
+## jsforce-ajax-proxy
 ```
 $ cd desktop
 $ git clone git@github.com:jsforce/jsforce-ajax-proxy.git
@@ -24,3 +24,6 @@ $ cd jsforce-ajax-proxy/
 $ npm install
 $ npm start
 ```
+
+## Salesforce Connect Apps Settings
+<img src="http://cdn-ak.f.st-hatena.com/images/fotolife/t/tyoshikawa1106/20160418/20160418020717.png" />
