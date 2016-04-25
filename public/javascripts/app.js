@@ -1,11 +1,11 @@
 angular.module("myApp", ["Controllers", "ngRoute", "ngMessages"]).config(["$routeProvider", function($routeProvider){
   $routeProvider.when("/", {
     controller : "AccountsCtrl",
-    templateUrl : "/angular_views/accounts.html"
+    templateUrl : "/angularviews/accounts.html"
   }).
   when("/view/:id", {
     controller : "AccountCtrl",
-    templateUrl : "/angular_views/account.html"
+    templateUrl : "/angularviews/account.html"
   }).
   otherwise({
     redirectTo: "/"
