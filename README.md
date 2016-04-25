@@ -5,6 +5,8 @@
 ## Setup
 ```
 $ cd desktop
+$ mkdir work
+$ cd work
 $ git clone git@github.com:tyoshikawa1106/node-jsforce-starter-app.git
 $ cd node-jsforce-starter-app
 $ npm install
@@ -14,6 +16,8 @@ $ npm start
 ## jsforce-ajax-proxy setup
 ```
 $ cd desktop
+$ mkdir work
+$ cd work
 $ git clone git@github.com:jsforce/jsforce-ajax-proxy.git
 $ cd jsforce-ajax-proxy/
 $ npm install
