@@ -1,4 +1,4 @@
-/*! Lightning Design System 1.0.0 */
+/*! Lightning Design System 1.0.3 */
 /*!
  * Copyright (c) 2015, salesforce.com, inc. All rights reserved.
  *
@@ -233,8 +233,13 @@ th {
   font-weight: 400;
   font-size: 0.875rem; }
 
+::selection {
+  background: #faffbd;
+  text-shadow: none;
+  color: #16325c; }
+
 html {
-  font: 100% / 1.5 "Salesforce Sans", Arial, sans-serif;
+  font: 100%/1.5 "Salesforce Sans", Arial, sans-serif;
   background: white;
   color: #16325c;
   -webkit-tap-highlight-color: transparent; }
@@ -242,11 +247,6 @@ html {
 body {
   font-size: 0.875rem;
   background: transparent; }
-
-::selection {
-  background: #faffbd;
-  text-shadow: none;
-  color: #16325c; }
 
 h1,
 h2,
@@ -408,25 +408,14 @@ img {
     content: ''; }
 
 .slds-button-group {
-  display: flex;
-  /**
-   * Note: This class should be placed on the wrapper
-   * of a button that's the final one in a button-group
-   */ }
+  display: flex; }
   .slds-button-group .slds-button {
-    border-radius: 0;
-    border-left: 0; }
-    .slds-button-group .slds-button + .slds-button {
-      margin-left: 0; }
+    border-radius: 0; }
+    .slds-button-group .slds-button + .slds-button,
+    .slds-button-group .slds-button + .slds-button--last .slds-button {
+      margin-left: -1px; }
     .slds-button-group .slds-button:first-child {
-      border-radius: 0.25rem 0 0 0.25rem;
-      border-left: 1px solid #d8dde6; }
-    .slds-button-group .slds-button:first-child.slds-button--inverse[disabled] {
-      border-left-color: rgba(255, 255, 255, 0.15); }
-    .slds-button-group .slds-button--inverse:first-child[disabled] + .slds-button--inverse {
-      border-left: 1px solid #d8dde6; }
-    .slds-button-group .slds-button:first-child:not(.slds-button--last .slds-button) {
-      border-left: 1px solid #d8dde6; }
+      border-radius: 0.25rem 0 0 0.25rem; }
     .slds-button-group .slds-button:last-child {
       border-radius: 0 0.25rem 0.25rem 0; }
     .slds-button-group .slds-button:focus {
@@ -438,21 +427,9 @@ img {
   .slds-button-group + .slds-button-group,
   .slds-button-group + .slds-button {
     margin-left: 0.25rem; }
-  .slds-button-group .slds-button--last .slds-button {
-    border-radius: 0 0.25rem 0.25rem 0;
-    border-left: 0; }
+  .slds-button-group .slds-button--last .slds-button,
   .slds-button-group .slds-button.slds-button--last {
     border-radius: 0 0.25rem 0.25rem 0; }
-
-.slds-button-group .slds-button--icon-border.slds-is-selected + .slds-button--icon-border.slds-is-selected {
-  border-left: 1px solid #d8dde6; }
-
-.slds-button-group .slds-button--icon-border.slds-is-selected:first-child {
-  border-left: 1px solid #0070d2; }
-
-.slds-button-group .slds-button--icon-more:hover,
-.slds-button-group .slds-button--icon-more:focus {
-  border-left-width: 0; }
 
 .slds-button {
   position: relative;
@@ -505,11 +482,6 @@ a.slds-button {
 
 .slds-button--small {
   line-height: 1.75rem;
-  /**
-   * Note: Force icon-only buttons to be the same
-   * height as small buttons since they're SVG
-   * and line-height has no effect on them
-   */
   min-height: 2rem; }
 
 .slds-button--neutral {
@@ -532,11 +504,6 @@ a.slds-button {
   .slds-button--hint:hover, .slds-button--hint:focus, .slds-button--hint:active {
     color: #0070d2; }
 
-/**
- * Note: A parent class must be put on anything that contains
- * a .slds-button--hint so that the child reacts
- * when the parent is hovered.
- */
 .slds-hint-parent:hover .slds-button--hint, .slds-hint-parent:focus .slds-button--hint {
   color: #0070d2; }
 
@@ -573,8 +540,7 @@ a.slds-button {
     background-color: #eef1f6; }
   .slds-button--inverse[disabled] {
     background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.15); }
+    border-color: rgba(255, 255, 255, 0.15); }
 
 .slds-button--inverse, .slds-button--inverse:link, .slds-button--inverse:visited,
 .slds-button-group .slds-button--icon-inverse,
@@ -592,6 +558,10 @@ a.slds-button {
 .slds-button-group .slds-button--icon-inverse:focus {
   outline: none;
   box-shadow: 0 0 3px #E0E5EE; }
+
+.slds-button--inverse[disabled],
+.slds-button-group .slds-button--icon-inverse[disabled] {
+  color: rgba(255, 255, 255, 0.15); }
 
 a.slds-button--inverse:focus {
   outline: none;
@@ -1952,6 +1922,9 @@ a.slds-button--inverse:focus {
 .slds-icon-standard-marketing-actions {
   background-color: #6bbd6e; }
 
+.slds-icon-standard-folder {
+  background-color: #8b9ae3; }
+
 .slds-icon-text-default {
   fill: #54698d; }
 
@@ -2009,8 +1982,7 @@ a.slds-button--inverse:focus {
   display: inline-block;
   padding: 0 1rem 0 0.75rem;
   line-height: 2.125rem;
-  min-height: calc(2.125rem + 2px);
-  /* Note: for IE */ }
+  min-height: calc(2.125rem + 2px); }
   .slds-input:focus, .slds-input:active {
     outline: 0;
     border-color: #1589ee;
@@ -2027,7 +1999,6 @@ a.slds-button--inverse:focus {
 .slds-input--small {
   line-height: 1.75rem;
   min-height: calc(1.75rem + 2px);
-  /* Note: for IE */
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   .slds-input--small::-webkit-input-placeholder {
@@ -2051,8 +2022,7 @@ a.slds-button--inverse:focus {
     outline: 0; }
 
 .slds-input--height {
-  min-height: calc(2.125rem + 2px);
-  /* Note: for IE */ }
+  min-height: calc(2.125rem + 2px); }
 
 .slds-input-has-icon {
   position: relative; }
@@ -2369,11 +2339,9 @@ a.slds-button--inverse:focus {
   .slds-form-element__static {
     display: inline-block;
     line-height: 2.125rem;
-    min-height: calc(2.125rem + 2px);
-    /* Note: for IE */ }
+    min-height: calc(2.125rem + 2px); }
     .slds-form-element__static.slds-text-longform {
-      line-height: 1.5;
-      padding-bottom: calc((1.5 * 0.875rem) - 0.875rem); }
+      line-height: 1.5; }
 
 .slds-required {
   color: #c23934;
@@ -2427,7 +2395,7 @@ a.slds-button--inverse:focus {
 
 .slds-form--horizontal .slds-form-element + .slds-form-element {
   margin-top: 0.75rem; }
-  @media (min-width: 64em) {
+  @media (min-width: 30em) {
     .slds-form--horizontal .slds-form-element + .slds-form-element {
       margin-top: 0.5rem; } }
 
@@ -2446,7 +2414,7 @@ a.slds-button--inverse:focus {
   display: block; }
   .slds-form--stacked .slds-form-element + .slds-form-element {
     margin-top: 0.75rem; }
-    @media (min-width: 64em) {
+    @media (min-width: 30em) {
       .slds-form--stacked .slds-form-element + .slds-form-element {
         margin-top: 0.5rem; } }
   .slds-form--stacked .slds-form-element .slds-checkbox,
@@ -2461,7 +2429,7 @@ a.slds-button--inverse:focus {
 .slds-form--inline .slds-form-element + .slds-form-element {
   margin-top: 0.75rem; }
 
-@media (min-width: 64em) {
+@media (min-width: 30em) {
   .slds-form--inline .slds-form-element {
     margin-right: 0.5rem; }
     .slds-form--inline .slds-form-element + .slds-form-element {
@@ -2751,7 +2719,6 @@ a.slds-button--inverse:focus {
         margin-top: 0.5rem; } }
 
 .slds-page-header__detail-row {
-  /* Note: This takes the width of the icon into account for alignment */
   margin: 1.5rem 0 0.75rem 3rem; }
 
 .slds-popover {
@@ -2769,6 +2736,8 @@ a.slds-button--inverse:focus {
     padding: 0.5rem 0.75rem; }
   .slds-popover[class*="theme--"] {
     border: 0; }
+  .slds-popover *:last-child {
+    margin-bottom: 0; }
 
 .slds-popover--tooltip {
   width: auto;
@@ -3687,8 +3656,7 @@ a.slds-button--inverse:focus {
       border-top: 1px solid #d8dde6; }
 
 .slds-comment__content {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
+  padding-top: 0.5rem; }
 
 .slds-comment__overflow {
   margin-bottom: 1rem; }
@@ -3735,11 +3703,12 @@ a.slds-button--inverse:focus {
       content: none; }
 
 .slds-attachments {
-  padding: 0.5rem 0; }
+  padding-bottom: 0.5rem; }
   .slds-attachments:empty {
     padding: 0; }
-  .slds-attachments__item + .slds-attachments__item {
-    margin-top: 1rem; }
+
+.slds-attachments__item + .slds-attachments__item {
+  margin-top: 1rem; }
 
 .slds-modal {
   opacity: 0;
@@ -3894,7 +3863,8 @@ a.slds-button--inverse:focus {
   .slds-pill + .slds-pill {
     margin-left: 0.25rem; }
   .slds-pill:hover {
-    background-color: #f4f6f9; }
+    background-color: #f4f6f9;
+    text-decoration: none; }
   .slds-pill:focus {
     outline: 0;
     box-shadow: 0 0 3px #0070D2; }
@@ -4165,7 +4135,7 @@ a.slds-button--inverse:focus {
 
 .slds-coach__guidance {
   padding-left: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
   background-color: #fafafb; }
 
 .slds-coach__item {
@@ -4468,73 +4438,73 @@ a.slds-button--inverse:focus {
   background: #f4f6f9;
   cursor: pointer; }
 
-[aria-level="1"] > .slds-tree__item {
+.slds-tree [aria-level="1"] > .slds-tree__item {
   padding-left: 1.5rem; }
 
-[aria-level="2"] > .slds-tree__item {
+.slds-tree [aria-level="2"] > .slds-tree__item {
   padding-left: 3rem; }
 
-[aria-level="3"] > .slds-tree__item {
+.slds-tree [aria-level="3"] > .slds-tree__item {
   padding-left: 4.5rem; }
 
-[aria-level="4"] > .slds-tree__item {
+.slds-tree [aria-level="4"] > .slds-tree__item {
   padding-left: 6rem; }
 
-[aria-level="5"] > .slds-tree__item {
+.slds-tree [aria-level="5"] > .slds-tree__item {
   padding-left: 7.5rem; }
 
-[aria-level="6"] > .slds-tree__item {
+.slds-tree [aria-level="6"] > .slds-tree__item {
   padding-left: 9rem; }
 
-[aria-level="7"] > .slds-tree__item {
+.slds-tree [aria-level="7"] > .slds-tree__item {
   padding-left: 10.5rem; }
 
-[aria-level="8"] > .slds-tree__item {
+.slds-tree [aria-level="8"] > .slds-tree__item {
   padding-left: 12rem; }
 
-[aria-level="9"] > .slds-tree__item {
+.slds-tree [aria-level="9"] > .slds-tree__item {
   padding-left: 13.5rem; }
 
-[aria-level="10"] > .slds-tree__item {
+.slds-tree [aria-level="10"] > .slds-tree__item {
   padding-left: 15rem; }
 
-[aria-level="11"] > .slds-tree__item {
+.slds-tree [aria-level="11"] > .slds-tree__item {
   padding-left: 16.5rem; }
 
-[aria-level="12"] > .slds-tree__item {
+.slds-tree [aria-level="12"] > .slds-tree__item {
   padding-left: 18rem; }
 
-[aria-level="13"] > .slds-tree__item {
+.slds-tree [aria-level="13"] > .slds-tree__item {
   padding-left: 19.5rem; }
 
-[aria-level="14"] > .slds-tree__item {
+.slds-tree [aria-level="14"] > .slds-tree__item {
   padding-left: 21rem; }
 
-[aria-level="15"] > .slds-tree__item {
+.slds-tree [aria-level="15"] > .slds-tree__item {
   padding-left: 22.5rem; }
 
-[aria-level="16"] > .slds-tree__item {
+.slds-tree [aria-level="16"] > .slds-tree__item {
   padding-left: 24rem; }
 
-[aria-level="17"] > .slds-tree__item {
+.slds-tree [aria-level="17"] > .slds-tree__item {
   padding-left: 25.5rem; }
 
-[aria-level="18"] > .slds-tree__item {
+.slds-tree [aria-level="18"] > .slds-tree__item {
   padding-left: 27rem; }
 
-[aria-level="19"] > .slds-tree__item {
+.slds-tree [aria-level="19"] > .slds-tree__item {
   padding-left: 28.5rem; }
 
-[aria-level="20"] > .slds-tree__item {
+.slds-tree [aria-level="20"] > .slds-tree__item {
   padding-left: 30rem; }
 
-[aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
-[aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
+.slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
+.slds-tree [aria-expanded="false"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
   transition: 0.2s transform ease-in-out;
   transform: rotate(0deg); }
 
-[aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
-[aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
+.slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > .slds-button__icon,
+.slds-tree [aria-expanded="true"] > .slds-tree__item > .slds-button[aria-controls] > span > .slds-button__icon {
   transition: 0.2s transform ease-in-out;
   transform: rotate(90deg); }
 
@@ -4909,14 +4879,17 @@ a.slds-button--inverse:focus {
 .slds-media--large .slds-media__figure {
   margin-right: 1.5rem; }
 
+.slds-media--small .slds-media__figure--reverse {
+  margin-left: 0.25rem; }
+
+.slds-media--large .slds-media__figure--reverse {
+  margin-left: 1.5rem; }
+
 .slds-media--center {
   align-items: center; }
 
 .slds-media__figure--reverse {
   margin: 0 0 0 0.75rem; }
-
-.slds-media--small .slds-media__figure--reverse {
-  margin-left: 0.25rem; }
 
 .slds-media--reverse > .slds-media__figure {
   order: 1; }
@@ -6031,15 +6004,6 @@ a.slds-button--inverse:focus {
 .slds-text-longform dl,
 .slds-text-longform img {
   margin-bottom: 0.75rem; }
-  .slds-text-longform h1:last-child,
-  .slds-text-longform h2:last-child,
-  .slds-text-longform h3:last-child,
-  .slds-text-longform p:last-child,
-  .slds-text-longform ul:last-child,
-  .slds-text-longform ol:last-child,
-  .slds-text-longform dl:last-child,
-  .slds-text-longform img:last-child {
-    margin-bottom: 0; }
 
 .slds-text-longform ul {
   margin-left: 1.5rem;
